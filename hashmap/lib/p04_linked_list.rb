@@ -15,10 +15,11 @@ end
 
 class LinkedList
   include Enumerable
-  attr_reader :head
+  attr_reader :head, :tail
 
   def initialize
     @head = nil
+    @tail = nil
   end
 
   def [](i)
@@ -35,6 +36,7 @@ class LinkedList
     while cur_el
       cur_el = cur_el.next if cur_el.next
     end
+    @tail = cur_el
     return cur_el
   end
 
